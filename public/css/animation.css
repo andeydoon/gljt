@@ -1,0 +1,62 @@
+/* animation */
+.animation { -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-duration: .4s; animation-duration: .4s; }
+/*由小到大出来*/
+.bounceIn { -webkit-animation-name: bounceIn; animation-name: bounceIn }
+@-webkit-keyframes bounceIn {
+    0% { opacity: 0; -webkit-transform: scale(.5); transform: scale(.5) }
+    100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1) }
+}
+@keyframes bounceIn {
+    0% { opacity: 0; -webkit-transform: scale(.5); transform: scale(.5) }
+    100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1) }
+}
+/*从向右边出来*/
+.rightIn { -webkit-animation-name: rightIn; animation-name: rightIn }
+@-webkit-keyframes rightIn {
+    0% { opacity: 0; -webkit-transform: translateX(200px); transform: translateX(200px) }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0) }
+}
+@keyframes rightIn {
+    0% { opacity: 0; -webkit-transform: translateX(200px); transform: translateX(200px) }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0) }
+}
+/*从左边出来*/
+.leftIn { -webkit-animation-name: leftIn; animation-name: leftIn }
+@-webkit-keyframes leftIn {
+    0% { opacity: 0; -webkit-transform: translateX(-200px); transform: translateX(-200px) }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0) }
+}
+@keyframes leftIn {
+    0% { opacity: 0; -webkit-transform: translateX(-200px); transform: translateX(-200px) }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0) }
+}
+/*从左边进去*/
+.leftIn_a{ -webkit-animation-name: leftIn_a; animation-name: leftIn_a }
+@-webkit-keyframes leftIn_a {
+    0% { opacity: 1; -webkit-transform: translateX(0px); transform: translateX(0px) }
+    100% { opacity: 0; -webkit-transform: translateX(-120%); transform: translateX(-120p%) }
+}
+@keyframes leftIn_a {
+    0% { opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px) }
+    100% { opacity: 1; -webkit-transform: translateX(-120%); transform: translateX(-120%) }
+}
+/*从下向上出来*/
+.upIn { -webkit-animation-name: upIn; animation-name: upIn }
+@-webkit-keyframes upIn {
+    0% { opacity: 0; -webkit-transform: translateY(200px); transform: translateY(200px) }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0) }
+}
+@keyframes upIn {
+    0% { opacity: 0; -webkit-transform: translateY(200px); transform: translateY(200px) }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0) }
+}
+/*从上向下出来*/
+.downAout{ -webkit-animation-name: downAout; animation-name: downAout }
+@-webkit-keyframes downAout {
+    0% { opacity: 0; -webkit-transform: translateY(-200px); transform: translateY(-200px) }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0) }
+}
+@keyframes upIn {
+    0% { opacity: 0; -webkit-transform: translateY(-200px); transform: translateY(-200px) }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0) }
+}
