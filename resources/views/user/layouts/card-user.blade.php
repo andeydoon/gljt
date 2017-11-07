@@ -43,6 +43,7 @@
                 </div>
             </div>
         @else
+            @php $score = auth()->user()->profile->score; @endphp
             <div class="fr clearfix z_mr10 z_mt10">
                 <div class="z_ewema fl z_mr20 z_mt10">
                     <div class="z_img_back">
@@ -51,15 +52,14 @@
                 </div>
                 <div class="fl bar-white z_border z_w200 z_border_ra-5 z_p10">
                     <div class="tc z_font28 z_fontb">
-                        80
+                        {{ round($score*20) }}
                     </div>
                     <div class="magnify" style="">
                         <div class="score_in_box tc z_mt0-i">
-                            <span class="score_star"><img src="/images/icon/tb62a.png" alt="star"></span>
-                            <span class="score_star"><img src="/images/icon/tb62a.png" alt="star"></span>
-                            <span class="score_star"><img src="/images/icon/tb62a.png" alt="star"></span>
-                            <span class="score_star"><img src="/images/icon/tb62.png" alt="star"></span>
-                            <span class="score_star"><img src="/images/icon/tb62.png" alt="star"></span>
+                            @for($i=0; $i<round($score); $i++)
+                                <span class="score_star"><img src="/images/icon/tb62a.png" alt="star"></span>
+                            @endfor
+
                         </div>
                     </div>
                 </div>

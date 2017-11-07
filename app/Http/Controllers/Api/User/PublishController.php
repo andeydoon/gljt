@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\User;
 
 use App\Order;
 use App\OrderComment;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -124,8 +125,15 @@ class PublishController extends Controller
             }
             $orderComment->save();
 
+            $score = OrderComment::where('service_id', $order->master->id)->avg('service_score');
+
+            $orderMasterProfile = $order->master->profile;
+            $orderMasterProfile->score = $score;
+            $orderMasterProfile->save();
+
+
             DB::commit();
-            return response()->json(['status' => 'success']);
+           return response()->json(['status' => 'success']);
         } catch (\Exception $e) {
             DB::rollBack();
             $message = '系统繁忙，请稍后再试';

@@ -63,7 +63,7 @@ class AlipayController extends Controller
             'total_amount' => $orderAmount,
             'product_code' => 'FAST_INSTANT_TRADE_PAY',
         ]);
-
+        var_dump($purchase);exit;
         $response = $purchase->send();
 
         return response()->json(['status' => 'success', 'data' => ['url' => $response->getRedirectUrl()]]);

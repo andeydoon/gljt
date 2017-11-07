@@ -4,9 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Order;
 use App\OrderCustomSchemeDraft;
+use App\UserProfile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Krucas\Notification\Facades\Notification;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends UserController
 {
